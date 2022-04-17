@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>HTML5</title>
+    {% load static %}
+    <link href={% static "css/workers_table/indexcss.css"%}  rel="stylesheet" type="text/css">
+    <script>
+      function get_hour(){
+          element = document.getElementById("search_input")
+          if (element != null) {
+              str = element.value;
+          }
+          else {
+              str = null;
+          }
+          console.log(str)
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Список сотрудников</h1>
+    <form class="search_employee">
+      <input id="search_input" placeholder="Surname" type="search"/>
+      <button onclick="get_hour()">Submit</button>
+    </form>
+    <section class="stuff_table">
+      <table>
+        <tr class="table_headers">
+          <th class="header">Name</th>
+          <th class="header">Surname</th>
+          <th class="header">Arrival Time</th>
+          <th class="header">Reason for late</th>
+          <th class="header">Who marked</th>
+        </tr>
+        {%for i in n%}
+        <tr class="employee_inf">
+          <td>Name{{i}}</td>
+          <td>Surname{{i}}</td>
+          <td>A</td>
+          <td>R</td>
+          <td> \W</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </section>
+</body>
+</html>

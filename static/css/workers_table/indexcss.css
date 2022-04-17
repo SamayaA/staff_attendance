@@ -1,0 +1,70 @@
+body {
+    display: block;
+    margin: 0 30px;
+
+    background-color: #ffffff;
+}
+
+
+h1 {
+    text-align: left;
+    font-family: Georgia, serif;
+}
+
+.header {
+    font-weight: 700;
+    color: #000;
+}
+
+.search_input {
+    outline: auto;
+    outline-offset: 2px;
+    border: 5px solid #346aff;
+    border-radius: 20%;
+
+}
+
+.stuff_table {
+    width: 80%;
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 30px;
+    font-family: Updock, serif;
+    text-align: left;
+    border: 1px solid transparent;
+}
+
+.employee_inf:nth-child(1n+1) {
+    background: #ffd7d7;
+}
+
+td {
+    padding:5px 50px;
+}
+
+.h1 {
+    background-color: #346aff;
+}
+
+tr:first-child {
+    background: #c9bdec;
+
+}
+
+th {
+    padding:5px 50px;
+}
+
+button {
+    background: transparent;
+    padding: 1px;
+    border-style: none;
+}
+
+button::hover {
+  cursor: pointer;
+  background: #fcdda1;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
