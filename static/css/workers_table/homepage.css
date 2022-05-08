@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+div.post-data {
+    margin: 100px 100px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
+
+h2.greeting {
+    font-size: large;
+    text-align: center;
+}
+
+.fixed-hour {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: normal;
+    align-items: center;
+
+}
+
+#select-status {
+    display: block;
+    box-sizing: border-box;
+    width: 480px;
+    min-height: 45px;
+
+    margin-top: 20px;
+    padding-left: 20px;
+    border: 1px solid #cbd1d4;
+
+    font-size: 14px;
+    color: #333333;
+
+}
+
+#comment {
+    min-width: 150px;
+    height: 50px;
+    max-width: 480px;
+    max-height: 150px;
+    margin: 20px;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+
+#submit_check {
+    width: 150px;
+    padding: 15px;
+
+    align-items: center;
+    vertical-align: middle;
+
+    border: 2px solid rgb(210, 210, 255);
+    border-radius: 5em;
+    font-stretch: ultra-expanded;
+
+    background-color: rgb(88, 88, 226);
+    color: white;
+}
+
+label {
+    margin-top: 20px;
+}
+
+.employees_list {
+    margin: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
