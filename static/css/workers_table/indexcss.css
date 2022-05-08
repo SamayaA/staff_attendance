@@ -1,70 +1,86 @@
 body {
-    display: block;
-    margin: 0 30px;
-
     background-color: #ffffff;
 }
 
 
 h1 {
-    text-align: left;
+    text-align: center;
     font-family: Georgia, serif;
 }
 
 .header {
-    font-weight: 700;
+    font-style: italic;
+    font-weight: 400;
     color: #000;
 }
 
-.search_input {
-    outline: auto;
-    outline-offset: 2px;
-    border: 5px solid #346aff;
-    border-radius: 20%;
-
-}
-
 .stuff_table {
-    width: 80%;
-    box-sizing: content-box;
-    display: flex;
-    flex-wrap: nowrap;
     margin: 30px;
     font-family: Updock, serif;
     text-align: left;
-    border: 1px solid transparent;
+    border: 1px solid white;
 }
 
-.employee_inf:nth-child(1n+1) {
-    background: #ffd7d7;
+table {
+    border-collapse:collapse;
 }
 
-td {
-    padding:5px 50px;
+thead {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 10px solid #ededee;
 }
 
-.h1 {
-    background-color: #346aff;
+.employee_inf {
+    background-color: #ffffff;
+}
+.employee_inf1 {
+    background-color: #ededee;
 }
 
-tr:first-child {
-    background: #c9bdec;
-
+td, th {
+    text-align: center;
+    padding: 15px 100px;
 }
 
-th {
-    padding:5px 50px;
+.button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #877aff;
+    border: 1px solid #877aff;
+    border-radius: 5em;
+    color: white;
 }
 
-button {
-    background: transparent;
-    padding: 1px;
-    border-style: none;
+.done {
+    background-color: rgba(255, 12, 12, 0.729);
+    padding: 5px;
+    border: 1px;
+    border-radius: 5em;
+}
+
+.arrived {
+    background-color: rgba(98, 255, 103, 0.729);
+    padding: 5px;
+    border: 1px;
+    border-radius: 5em;
+}
+
+.search_employee {
+    margin-left: 30px;
 }
 
 button::hover {
   cursor: pointer;
-  background: #fcdda1;
-  border: 1px solid transparent;
+  padding: 5px 10px;
+  border: 1px solid #c3c3c3;
   border-radius: 5px;
+  background: #c3c3c3;
 }
+
+input[type=search] {
+    padding: 5px 50px;
+    border: 2px solid rgb(242, 242, 242);
+    border-radius: 4px;
+  }
+

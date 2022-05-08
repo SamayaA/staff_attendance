@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <title>HTML5</title>
     {% load static %}
-    <link href={% static "css/workers_table/indexcss.css"%}  rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href='{% static "css/workers_table/indexcss.css"%}?{% now "U" %}'>
     <script>
       function get_hour(){
           element = document.getElementById("search_input")
@@ -19,29 +19,34 @@
     </script>
   </head>
   <body>
-    <h1>Список сотрудников</h1>
+    <h1>Система учета</h1>
     <form class="search_employee">
       <input id="search_input" placeholder="Surname" type="search"/>
-      <button onclick="get_hour()">Submit</button>
+      <button class="button" type="Submit" onclick='get_hour()'>Submit</button>
     </form>
     <section class="stuff_table">
       <table>
-        <tr class="table_headers">
-          <th class="header">Name</th>
-          <th class="header">Surname</th>
-          <th class="header">Arrival Time</th>
-          <th class="header">Reason for late</th>
-          <th class="header">Who marked</th>
-        </tr>
-        {%for i in n%}
-        <tr class="employee_inf">
-          <td>Name{{i}}</td>
-          <td>Surname{{i}}</td>
-          <td>A</td>
-          <td>R</td>
-          <td> \W</td>
-        </tr>
-      {% endfor %}
+        <caption><strong>Список сотрудников предприятия</strong></caption>
+        <thead>
+          <tr class="table_headers">
+            <th class="header">Name Surname</th>
+            <th class="header">Status</th>
+            <th class="header">Arrival Time</th>
+            <th class="header">Reason for late</th>
+            <th class="header">Who marked</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for i in n%}
+          <tr class="{%cycle 'employee_inf' 'employee_inf1'%}">
+            <td>Name Surname {{i}}</td>
+            <td><span class="{{status}}">Arrived</span></td>
+            <td><span> 08:30 </span></td>
+            <td>R</td>
+            <td>{% cycle "A" "H" %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
       </table>
     </section>
 </body>
