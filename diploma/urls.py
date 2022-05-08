@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from workers_table.views import workers
+from workers_table.views import workers, homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("list/", workers),
+    path('homepage/', homepage)
 ]
