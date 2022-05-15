@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>HTML5</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/workers_table/indexcss.css"%}?{% now "U" %}'>
+    {% comment %} <script src='{% static "js/list.js" %}'></script> {% endcomment %}
+  <body>
+    <h1>Система учета</h1>
+    <form class="search_employee">
+      <input id="search_input" placeholder="Surname" type="search"/>
+      <button class="button" type="Submit" onclick='get_hour()'>Submit</button>
+    </form>
+    <a href='{% url "logout"%}'> Выйти из аккаунта {{request.user}}</a>
+    <div id="employee">
+      <span id="full-name"></span>
+    </div>
+    <section class="stuff_table">
+      {% csrf_token %}
+      <table>
+        <caption><strong>Список сотрудников предприятия</strong></caption>
+        <thead>
+          <tr class="table_headers">
+            <th class="header">Имя Фамилия</th>
+            <th class="header">Статус</th>
+            <th class="header">Время</th>
+            <th class="header">Замечание</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for employee in employees%}
+          <tr class="{%cycle 'employee_inf' 'employee_inf1'%}">
+            <td><a href="http://127.0.0.1:8000/employee?id={{user.id}}">{{employee.employee_last_name}} {{employee.employee_first_name}}</a></td>
+            <td>
+              <span class="{{employee.status}}">
+                {%if employee.status == "LEFT"%}
+                  Ушел
+                {% endif %}
+                {%if employee.status == "ARRIVED"%}
+                  Прибыл
+                {% endif %}
+              </span>
+            </td>
+            <td><span> {{employee.time}}</span></td>
+            <td>{{employee.reason}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+</body>
+</html>
