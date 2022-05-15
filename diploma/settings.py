@@ -39,11 +39,9 @@ INSTALLED_APPS = [
     
     'phonenumber_field',
     'rest_framework',
+    'django_filters',
     'rest_framework.authtoken',
-    
     'workers_table',
-
-
 ]
 
 MIDDLEWARE = [
@@ -74,7 +72,22 @@ TEMPLATES = [
         },
     },
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_THROTTLE_CLASSES' : [
+        'rest_framework.throttling.UserRateThrottle',
+        'rest_framework.throttling.AnonRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES':{
+        'user': '20/minute',
+        'anon': '10/minute'
+    },
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 WSGI_APPLICATION = 'diploma.wsgi.application'
 
 
