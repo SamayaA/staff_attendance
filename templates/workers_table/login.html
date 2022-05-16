@@ -1,11 +1,21 @@
-{% extends "base.html" %}
-{% block title %}Log-in{% endblock %}
-{% block content %}
-    <h1>Log-in</h1>
-    <p>Пожалуйста, введите:</p>
-    <form action="." method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Log-in"></p>
-    </form>
-{% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Log-in</title>
+        <link rel="stylesheet" type="text/css" href='{% static "css/workers_table/login.css"%}?{% now "U" %}'>
+    </head>
+    <body>
+        <div id="header">
+        </div>
+        <div id="content">
+                <form action="." method="post" class="login-form">
+                    <h1>Войдите в аккаунт</h1>
+                    <p>Пожалуйста, введите:</p>
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" value="Login" class="button">
+                </form>
+        </div>
+    </body>
+</html>
