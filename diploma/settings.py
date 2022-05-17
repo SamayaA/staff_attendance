@@ -72,6 +72,7 @@ TEMPLATES = [
         },
     },
 ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -88,6 +89,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
 WSGI_APPLICATION = 'diploma.wsgi.application'
 
 

@@ -1,19 +1,40 @@
-body{
+/* Оформление тела HTML страницы */
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
+
+/* Оформление навигационного меню с ссылками */
+a {
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+.menu {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Оформление блока регистрации */
 div.post-data {
     margin: 100px 100px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
 }
 
+/* Оформление надписи приветствия */
 h2.greeting {
     font-size: large;
     text-align: center;
 }
 
+/* Оформление формы отправки регистрации прибытия/убытия сотрудника */
 .fixed-hour {
     height: 300px;
     width: 100%;
@@ -24,6 +45,12 @@ h2.greeting {
 
 }
 
+/* Оформления названия полей */
+label {
+    margin-top: 20px;
+}
+
+/* Оформление поля выбора статуса */
 #select-status {
     display: block;
     box-sizing: border-box;
@@ -39,6 +66,7 @@ h2.greeting {
 
 }
 
+/* Оформление поля замечания */
 #comment {
     min-width: 150px;
     height: 50px;
@@ -49,7 +77,8 @@ h2.greeting {
     text-overflow: ellipsis;
 }
 
-#submit_check {
+/* Оформление кнопки формы регистрации */
+#submit-check {
     width: 150px;
     padding: 15px;
 
@@ -64,12 +93,4 @@ h2.greeting {
     color: white;
 }
 
-label {
-    margin-top: 20px;
-}
 
-.employees_list {
-    margin: 20px;
-    padding: 10px;
-    text-decoration: none;
-}

@@ -1,9 +1,7 @@
-# from django.contrib.auth.models import User
-# from phonenumber_field.modelfields import PhoneNumberField
-import datetime
+
 from rest_framework import serializers
 
-from workers_table.models import Control, Department, Department, DepartmentHead, Employee, Exceptions, Vacation
+from workers_table.models import Control, Department, DepartmentHead, Employee, Exceptions, Vacation
 
 class EmployeeSerializer(serializers.ModelSerializer):
     '''
@@ -31,7 +29,11 @@ class ControlSerializer(serializers.ModelSerializer):
         model = Control
         fields = ("id", "employee_id", "employee_first_name", "employee_last_name", "date", "time", "status", "reason")
 
-# permission only to 
+class DepartmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Department
+        fields = "__all__"
+
 class ExceptionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exceptions

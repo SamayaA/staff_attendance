@@ -1,8 +1,31 @@
+/* Оформление тела HTML страницы */
 body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    align-items: center;
     background-color: #ffffff;
+    vertical-align: middle;
 }
 
+/* Оформление навигационного меню с ссылками */
+a {
+    text-decoration: none;
+}
 
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+.menu {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Оформление заголовка */
 h1 {
     text-align: center;
     font-family: Georgia, serif;
@@ -14,44 +37,42 @@ h1 {
     color: #000;
 }
 
-.stuff_table {
+/* Оформление блока с таблицей */
+.stuff-table {
     margin: 30px;
     font-family: Updock, serif;
-    text-align: left;
+    text-align: center;
     border: 1px solid white;
 }
 
+/* Удаление пространства между ячейками */
 table {
-    border-collapse:collapse;
+    border-collapse: collapse;
 }
 
+/* Оформление заголовков таблицы*/
 thead {
     margin-bottom: 10px;
     margin-top: 10px;
     border-bottom: 10px solid #ededee;
 }
 
-.employee_inf {
+/* Оформление чередования цветов у строк таблицы */
+.employee-inf {
     background-color: #ffffff;
 }
-.employee_inf1 {
+
+.employee-inf1 {
     background-color: #ededee;
 }
 
+/* Оформление ячеек таблицы и их текст */
 td, th {
     text-align: center;
     padding: 15px 100px;
 }
 
-.button {
-    padding: 5px 10px;
-    margin-left: 10px;
-    background-color: #877aff;
-    border: 1px solid #877aff;
-    border-radius: 5em;
-    color: white;
-}
-
+/* Оформление ячейки статуса Ушел */
 .LEFT {
     background-color: rgba(255, 12, 12, 0.729);
     padding: 5px;
@@ -59,6 +80,7 @@ td, th {
     border-radius: 5em;
 }
 
+/* Оформление ячейки статуса Прибыл */
 .ARRIVED {
     background-color: rgba(98, 255, 103, 0.729);
     padding: 5px;
@@ -66,9 +88,18 @@ td, th {
     border-radius: 5em;
 }
 
-.search_employee {
+/* .search_employee {
     margin-left: 30px;
 }
+
+ .button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: #877aff;
+    border: 1px solid #877aff;
+    border-radius: 5em;
+    color: white;
+} 
 
 button::hover {
   cursor: pointer;
@@ -82,5 +113,5 @@ input[type=search] {
     padding: 5px 50px;
     border: 2px solid rgb(242, 242, 242);
     border-radius: 4px;
-  }
+  } */
 

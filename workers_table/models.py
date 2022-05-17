@@ -45,8 +45,19 @@ class DepartmentHead(models.Model):
     args: head: Employee ID, department: Department ID 
     '''
     # Employee
-    head = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="department_head", verbose_name="head", on_delete=models.CASCADE, blank=False)
-    department = models.ForeignKey(Department, related_name="department_head", on_delete=models.CASCADE, blank=False)
+    head = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        related_name="department_head", 
+        verbose_name="head", 
+        on_delete=models.CASCADE, 
+        blank=False
+        )
+    department = models.ForeignKey(
+        Department, 
+        related_name="department_head", 
+        on_delete=models.CASCADE, 
+        blank=False
+        )
 
 class EmployeeStatusChoices(models.TextChoices):
     '''Status of employee movement'''
