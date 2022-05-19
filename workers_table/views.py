@@ -125,7 +125,7 @@ class ControlThatDayViewSet(ModelViewSet):
 # функции, которая отправляет регистрацию прибытия/убытие сотрудника
 def post_control(request):
     if request.user.is_authenticated:
-        token = Token.objects.get(user=request.user)
+        # token = Token.objects.get(user=request.user)
 
         # проверка был ли у сотрудника этот статус сегодня
         status_repeat = 0
