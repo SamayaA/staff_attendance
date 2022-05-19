@@ -5,3 +5,4 @@ django-phonenumbers
 djangorestframework-3.13.1
 django-filter
 datetime
+requests
