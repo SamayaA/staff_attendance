@@ -28,7 +28,7 @@
         <tbody>
           {%for employee in employees%}
           <tr class="{%cycle 'employee-inf' 'employee-inf1'%}">
-            <td><a href="http://127.0.0.1:8000/employee?id={{employee.employee_id}}">{{employee.employee_last_name}} {{employee.employee_first_name}}</a></td>
+            <td><a href="{% url "get_employee" %}?id={{employee.employee_id}}">{{employee.employee_last_name}} {{employee.employee_first_name}}</a></td>
             <td>
               <span class="{{employee.status}}">
                 {%if employee.status == "LEFT"%}
