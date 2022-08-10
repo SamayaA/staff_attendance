@@ -1,8 +1,9 @@
 
 # подключение модулей
 import datetime
-from django.http import HttpResponse
+import requests
 
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate, login
@@ -16,8 +17,6 @@ from workers_table.forms import LoginForm
 from workers_table.models import Employee, Control
 from workers_table.permissions import ControlPermission
 from workers_table.serializers import ControlSerializer, EmployeeSerializer
-
-import requests
 
 # аутентификация пользователя
 def user_login(request):
@@ -54,7 +53,8 @@ def workers(request):
             'accept': 'application/json' ,
             'authorization': f'Token {token}'
         }
-        employees = requests.get('http://127.0.0.1:8000/api/today/', headers=headers).json()
+        
+        employees = requests.get(f'http://{request.get_host()}/api/today/', headers=headers).json()
         content = {
         "employees": employees
         }
@@ -83,7 +83,7 @@ def employee_page(request):
                 'accept': 'application/json' ,
                 'authorization': f'Token {token}'
             }
-            responce = requests.get(f'http://127.0.0.1:8000/api/employees/{employee_id}/', headers=headers).json()
+            responce = requests.get(f'http://{request.get_host()}/api/employees/{employee_id}/', headers=headers).json()
             print(responce)
             context = {
                 "employee": responce,
@@ -137,6 +137,7 @@ def post_control(request):
         if request.POST["status"] == "LEFT":
             impossible_status = Control.objects.filter(employee_id=request.POST["employee_id"],
             status="ARRIVED", date=datetime.date.today()).count()
+        print(impossible_status, status_repeat)
         if impossible_status != 0 and status_repeat == 0:
             employee = Control(employee_id=request.POST["employee_id"],
                 status=request.POST["status"],reason=request.POST["reason"]).save()
