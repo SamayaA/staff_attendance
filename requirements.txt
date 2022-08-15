@@ -5,6 +5,7 @@ certifi==2022.6.15
 charset-normalizer==2.1.0
 colorama==0.4.5
 coverage==6.4.2
+DateTime==4.5
 Django==4.1
 django-filter==22.1
 django-phonenumber-field==6.3.0
@@ -30,3 +31,4 @@ sqlparse==0.4.2
 tomli==2.0.1
 tzdata==2022.1
 urllib3==1.26.11
+zope.interface==5.4.0

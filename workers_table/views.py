@@ -48,7 +48,11 @@ def workers(request):
     returns the table of employees and their current status of being at work
     '''
     if request.user.is_authenticated:
-        token = Token.objects.get(user=request.user)
+        try:
+            token = Token.objects.get(user=request.user)
+        except Token.DoesNotExist:
+            Token.objects.create(user=request.user)
+            token = Token.objects.get(user=request.user)
         headers = {
             'accept': 'application/json' ,
             'authorization': f'Token {token}'
@@ -78,7 +82,12 @@ def employee_page(request):
         if employee_id == None:
             return HttpResponse('У данного сотрудника нет id')
         else:
-            token = Token.objects.get(user=request.user)
+            try:
+                token = Token.objects.get(user=request.user)
+            except Token.DoesNotExist:
+                Token.objects.create(user=request.user)
+                token = Token.objects.get(user=request.user)
+
             headers = {
                 'accept': 'application/json' ,
                 'authorization': f'Token {token}'

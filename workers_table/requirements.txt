@@ -1,8 +1,0 @@
-django
-djangorestframework
-django-phonenumber-field-6.1.0
-django-phonenumbers
-djangorestframework-3.13.1
-django-filter
-datetime
-requests

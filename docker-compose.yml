@@ -9,7 +9,11 @@ services:
       POSTGRES_HOST_AUTH_METHOD: "trust"
   web:
     build: .
-    command: python /workers/manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python /workers/manage.py migrate &&
+             python /workers/manage.py runserver 0.0.0.0:8000
+            "
+    
     volumes:
       - .:/workers
     ports:
