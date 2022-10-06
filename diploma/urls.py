@@ -17,34 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from rest_framework.routers import DefaultRouter
-from rest_framework.authtoken import views
-
-from workers_table.views import (
-    ControlThatDayViewSet,
-    ControlViewSet, 
-    EmployeeViewSet, 
+from workers_table.views import ( 
     employee_page, 
     logout,
-    post_control, 
-    user_login, 
+    signin, 
     workers, 
-    homepage
+    register,
     )
-
-router = DefaultRouter()
-router.register('employees', EmployeeViewSet, basename='employees')
-router.register('controls', ControlViewSet, basename='controling')
-router.register('today', ControlThatDayViewSet, basename='control')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("list/", workers, name='list'),
-    path('homepage/', homepage, name='homepage'),
-    path('api/', include(router.urls)),
-    path('', user_login, name='login'),
+    path('register/', register, name='register'),
+    path('api/', include('workers_table.urls')),
+    path('', signin, name='login'),
     path('logout/', logout, name='logout'),
     path('employee/', employee_page, name='get_employee'),
-    path('post_control/', post_control, name='post_control'), 
 
 ]

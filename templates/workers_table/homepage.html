@@ -15,7 +15,7 @@
       </div>
     <div class="post-data">
         <h2 class="greeting">Здравствуйте, {{user.get_full_name}} </h2>
-        <form id="control" method="POST" action="{% url 'post_control' %}" class="fixed-hour">
+        <form id="control" method="POST" action="{% url 'register' %}" class="fixed-hour">
             {% csrf_token %}
             <input  type="hidden" name="employee_id" value={{user.id}}>
             <label for="select-status" class="post-labels">

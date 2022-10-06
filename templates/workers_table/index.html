@@ -6,13 +6,14 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href='{% static "css/workers_table/indexcss.css"%}?{% now "U" %}'>
   <body>
+    <script src='{% static "js/workers_table/employee.js"%}'>
+    </script>
     <div class="links">
       <a href="{% url 'logout' %}" class="menu"> Выйти из аккаунта {{request.user}}</a>
-      <a href="{% url 'homepage' %}" class="menu">Страница регистрации прибытия/убытия</a>
+      <a href="{% url 'register' %}" class="menu">Страница регистрации прибытия/убытия</a>
     </div>
     <h1>Список сотрудников предприятия</h1>
     <div id="employee">
-      <span id="full-name"></span>
     </div>
     <section class="stuff-table">
       {% csrf_token %}
@@ -28,7 +29,7 @@
         <tbody>
           {%for employee in employees%}
           <tr class="{%cycle 'employee-inf' 'employee-inf1'%}">
-            <td><a href="{% url "get_employee" %}?id={{employee.employee_id}}">{{employee.employee_last_name}} {{employee.employee_first_name}}</a></td>
+            <td><a href="{% url 'get_employee' %}?id={{employee.employee_id | stringformat:'s'}}" onclick="showEmployeeInfo(event)">{{employee.employee_last_name}} {{employee.employee_first_name}}</a></td>
             <td>
               <span class="{{employee.status}}">
                 {%if employee.status == "LEFT"%}

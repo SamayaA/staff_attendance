@@ -24,7 +24,7 @@ class DepartmentHeadSerializer(serializers.ModelSerializer):
 class ControlSerializer(serializers.ModelSerializer):
     employee_first_name = serializers.ReadOnlyField(source="employee.first_name")
     employee_last_name = serializers.ReadOnlyField(source="employee.last_name")
-    employee_id = serializers.IntegerField()
+    employee_id = serializers.UUIDField()
     class Meta:
         model = Control
         fields = ("id", "employee_id", "employee_first_name", "employee_last_name", "date", "time", "status", "reason")

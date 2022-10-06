@@ -7,7 +7,7 @@
 *.py[cod]
 *$py.class
 
-env/
+.env
 venv/
 .venv/
 *migrations*
