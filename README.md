@@ -2,7 +2,7 @@
 **!!!** Для работы проекта нужно создать администратора (python manage.py createsuperuser). Регистрировать пользователей и менять их пароль и токен имеет право только администратор.  
 RUN COMMANDS IN TERMINAL
 ```
-pip install requirements.txt  
+pip install -r requirements.txt  
 python manage.py migrate  
 python manage.py createsuperuser 
 ``` 
